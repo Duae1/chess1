@@ -1,40 +1,41 @@
 class Puzzle:
     def __init__(self, dict_data):
         self.puzzle = dict_data
-        self.Fen = None
-        self.Id = None
-        self.Moves = None
-        self.RatingDeviation = None
-        self.Popularity = None
-        self.nbPlays = None
-        self.Themes = None
+        self.fen = None
+        self.id = None
+        self.moves = None
+        self.rating_deviation = None
+        self.popularity = None
+        self.nb_plays = None
+        self.themes = None
 
-    def get_FEN(self):
-        self.Fen = self.puzzle['FEN']
+    def get_Fen(self):
+        self.fen = self.puzzle['FEN']
 
     def get_Id(self):
-        self.Id = self.puzzle['PuzzleId']
+        self.id = self.puzzle['PuzzleId']
 
     def get_Moves(self):
-        self.Moves = self.puzzle['Moves']
+        self.moves = self.puzzle['Moves']
 
     def get_RatingDeviation(self):
-        self.RatingDeviation = self.puzzle['RatingDeviation']
+        self.rating_deviation = self.puzzle['RatingDeviation']
 
     def get_Popularity(self):
-        self.Popularity = self.puzzle['Popularity']
+        self.popularity = self.puzzle['Popularity']
 
-    def get_nbPlays(self):
-        self.nbPlays = self.puzzle['NbPlays']
+    def get_NbPlays(self):
+        self.nb_plays = self.puzzle['NbPlays']
 
     def get_Themes(self):
-        self.Themes = self.puzzle['Themes']
+        self.themes = self.puzzle['Themes']
 
     def Attributs(self):
-        self.get_FEN()
+        self.get_Fen()
         self.get_Id()
         self.get_Moves()
         self.get_RatingDeviation()
         self.get_Popularity()
-        self.get_nbPlays()
+        self.get_NbPlays()
         self.get_Themes()
+
