@@ -1,9 +1,11 @@
-class FEN:
-    def __init__(self, fen):
-        self.fen = fen
+class Fen:
+    def __init__(self, fen_string : str) -> None:
+        self.fen_string = fen_string
 
-    def is_valid(self):
-        parts = self.fen.split(' ')
+    def is_valid(self) -> bool:
+        parts = self.fen_string.split(' ')
+        if not parts or parts[0] == "": # si la chaîne est vide false
+            return False
         board_layout = parts[0]
         
         rows = board_layout.split('/')
@@ -15,8 +17,10 @@ class FEN:
             for char in row:
                 if char.isdigit():
                     count += int(char)
+                elif char.isalpha(): #  Vérifie que c'est bien une LETTRE
+                    count += 1    
                 else:
-                    count += 1
+                    return False 
             
             if count != 8:
                 return False
@@ -25,7 +29,9 @@ class FEN:
 
     def to_grid(self):
         """Converts the FEN string into an 8x8 list for the board"""
-        board_part = self.fen.split(' ')[0]
+        if not self.is_valid(): #  Empêche de créer une grille si le FEN est faux
+            return None
+        board_part = self.fen_string.split(' ')[0]
         grid = []
         
         for row in board_part.split('/'):
@@ -37,4 +43,5 @@ class FEN:
                 else:
                     grid_row.append(char)
             grid.append(grid_row)
+
         return grid
