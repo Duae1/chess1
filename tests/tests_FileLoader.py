@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from model.file_loader import FileLoader
 
 def test_file_loader():
-  data = FileLoader("lichess.csv").read_csv()
+  data = FileLoader("Lichess.csv").read_csv()
 
   assert data is not None, "Pas de retour None"
   assert isinstance(data, list), "Il faut un retour liste"
