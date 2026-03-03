@@ -10,8 +10,8 @@ def test_file_loader():
 
   assert data is not None, "Pas de retour None"
   assert isinstance(data, list), "Il faut un retour liste"
-  assert len(data)>0:
-    print("Fichier chargé ")
+  assert len(data)>0,"liste vide"
+  print("Fichier chargé ")
 
   nodata = FileLoader("").read_csv()
 
