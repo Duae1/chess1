@@ -11,11 +11,11 @@ def main():
     all_puzzles = loader.read_csv()
     
     if all_puzzles:
-        my_puzzle = puzzle(all_puzzles[0])
+        my_puzzle = Puzzle(all_puzzles[0])
         my_puzzle.puzzle = all_puzzles[0] 
         my_puzzle.Attributs()
 
-        fen_logic = Fen(my_puzzle.Fen)
+        fen_logic = Fen(my_puzzle.fen)
         new_grid = fen_logic.to_grid()
 
         app = QApplication(sys.argv)
@@ -30,6 +30,7 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
 
