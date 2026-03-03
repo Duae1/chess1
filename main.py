@@ -2,20 +2,20 @@ import sys
 from PySide6.QtWidgets import QApplication
 
 from model.file_loader import FileLoader
-from model.puzzle import Puzzle
-from model.fen import Fen
+from model.puzzle import puzzle
+from model.fen import fen
 from view.view import ChessBoard
 
 def main():
-    loader = FileLoader("Lichess.csv")
+    loader = FileLoader("lichess.csv")
     all_puzzles = loader.read_csv()
     
     if all_puzzles:
-        my_puzzle = Puzzle(all_puzzles[0])
+        my_puzzle = puzzle(all_puzzles[0])
         my_puzzle.puzzle = all_puzzles[0] 
         my_puzzle.Attributs()
 
-        fen_logic = Fen(my_puzzle.fen)
+        fen_logic = fen(my_puzzle.fen)
         new_grid = fen_logic.to_grid()
 
         app = QApplication(sys.argv)
@@ -28,9 +28,4 @@ def main():
         sys.exit(app.exec())
 
 if __name__ == "__main__":
-
     main()
-
-
-
-
