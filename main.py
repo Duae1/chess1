@@ -2,7 +2,7 @@ import sys
 from PySide6.QtWidgets import QApplication
 
 from model.file_loader import FileLoader
-from model.Puzzle import Puzzle
+from model.puzzle import Puzzle
 from model.fen import FEN
 from view.view import ChessBoard
 
@@ -28,4 +28,5 @@ def main():
         sys.exit(app.exec())
 
 if __name__ == "__main__":
+
     main()
