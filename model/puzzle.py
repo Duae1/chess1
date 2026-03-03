@@ -1,4 +1,4 @@
-class Puzzle:
+class puzzle:
     def __init__(self, dict_data):
         self.puzzle = dict_data
         self.fen = None
@@ -38,4 +38,5 @@ class Puzzle:
         self.get_Popularity()
         self.get_NbPlays()
         self.get_Themes()
+
 
