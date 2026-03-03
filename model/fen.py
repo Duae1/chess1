@@ -1,4 +1,4 @@
-class Fen:
+class fen:
     def __init__(self, fen_string : str) -> None:
         self.fen_string = fen_string
 
@@ -45,3 +45,4 @@ class Fen:
             grid.append(grid_row)
 
         return grid
+
