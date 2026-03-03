@@ -8,14 +8,14 @@ from view.view import ChessBoard
 
 def main():
     loader = FileLoader("lichess.csv")
-    all_puzzles = loader.readCSV()
+    all_puzzles = loader.read_csv()
     
     if all_puzzles:
-        my_puzzle = Puzzle(all_puzzles[0])
+        my_puzzle = puzzle(all_puzzles[0])
         my_puzzle.puzzle = all_puzzles[0] 
         my_puzzle.Attributs()
 
-        fen_logic = FEN(my_puzzle.Fen)
+        fen_logic = Fen(my_puzzle.Fen)
         new_grid = fen_logic.to_grid()
 
         app = QApplication(sys.argv)
@@ -30,4 +30,5 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
