@@ -7,7 +7,7 @@ from model.fen import Fen
 from view.view import ChessBoard
 
 def main():
-    loader = FileLoader("lichess.csv")
+    loader = FileLoader("Lichess.csv")
     all_puzzles = loader.read_csv()
     
     if all_puzzles:
@@ -30,5 +30,6 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
